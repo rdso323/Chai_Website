@@ -1,38 +1,148 @@
+.Main {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .App {
-  text-align: center;
+  height: 13%;
+  /* //text-align: center; */
+  /* border: 5px solid yellow; */
+  position: relative;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 87%;
+  flex-direction: row;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: relative;
+  /* border: 5px solid red; */
+  z-index: -1;
+}
+.left {
+  background-color: #282c34;
+  position: absolute;
   color: white;
+  /* float: left; */
+  /* border: 5px solid blue; */
+  width: 55%;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.right {
+  background-color: #282c34;
+  width: 45%;
+  height: 100%;
+  /* border: 5px solid green; */
+  position: absolute;
+  color: white;
+  right: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.right img {
+  /* max-width: 100%;
+  max-height: 100%; */
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  /* left: 10%;
+  top: 10%; */
+  /* -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out; */
+}
+
+/* .right img.bottom:hover {
+  opacity: 0;
+} */
+
+.right img.bottom {
+  animation-name: rightFadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+  animation-direction: alternate;
+}
+
+.right img.top {
+  animation-name: rightFadeOutIn;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+  animation-direction: alternate;
+}
+
+@keyframes rightFadeInOut {
+  0% {
+    opacity: 0.7;
   }
-  to {
-    transform: rotate(360deg);
+  45% {
+    opacity: 0.7;
   }
+  55% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes rightFadeOutIn {
+  0% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.welcome {
+  font-family: "JetBrains Mono", monospace;
+  position: relative;
+  top: 20%;
+}
+
+.welcome-body {
+  font-family: "JetBrains Mono", monospace;
+  position: relative;
+  top: 25%;
+}
+
+.welcome-footer {
+  font-family: "JetBrains Mono", monospace;
+  position: absolute;
+  bottom: 2%;
+  left: 0%;
+  font-style: italic;
+}
+
+.quote {
+  font-family: "PT Sans", sans-serif;
+  text-overflow: clip;
+  position: relative;
+  top: 73%;
+  left: 2%;
+}
+
+.quote-author {
+  font-family: "PT Sans", sans-serif;
+  font-style: italic;
+  position: relative;
+  top: 76%;
+  left: 2%;
+}
+
+.Cursive {
+  /* font-family: "Cedarville Cursive", cursive; */
+  font-family: "Handlee", cursive;
+  position: relative;
+  /* bottom: 100%; */
 }
