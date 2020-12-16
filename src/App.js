@@ -5,8 +5,8 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import Home from "./Home";
-import Products from "./Products";
+import Home from "./components/Home";
+import Products from "./components/Products";
 
 function App() {
   return (

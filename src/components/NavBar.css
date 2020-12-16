@@ -1,0 +1,35 @@
+.Cursive {
+  /* font-family: "Cedarville Cursive", cursive; */
+  font-family: "Handlee", cursive;
+  position: relative;
+  /* bottom: 100%; */
+  /* transition: 2.5s; */
+  /* animation-name: rotate_logo;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  animation-direction: alternate; */
+}
+
+/* .Cursive :hover {
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+} */
+
+@keyframes rotate_logo {
+  0% {
+    rotate: 20deg;
+  }
+  45% {
+    rotate: 40deg;
+  }
+  55% {
+    rotate: 20deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}

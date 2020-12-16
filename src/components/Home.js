@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./Home.css";
 import chaiPic from "./masala-chai-1.jpg";
 import chaiPic2 from "./masala-chai-2.jpg";
 import NavBar from "./NavBar";

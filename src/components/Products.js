@@ -5,8 +5,8 @@ import NavBar from "./NavBar";
 function Products() {
   const Headers = ["#", "Product", "Description", "Quantity Left", "Purchase"];
   const [og, setOg] = useState(20);
-  const [spice, setspice] = useState(10);
-  const [zest, setzest] = useState(8);
+  const [spice, setSpice] = useState(10);
+  const [zest, setZest] = useState(8);
   const [status, setstatus] = useState("");
 
   const handleOg = () => {
@@ -15,12 +15,12 @@ function Products() {
   };
 
   const handleSpice = () => {
-    //setOg(og - 1);
+    setSpice(spice - 1);
     setstatus("Purchased Successfully!");
   };
 
   const handleZest = () => {
-    //setOg(og - 1);
+    setZest(zest - 1);
     setstatus("Purchased Successfully!");
   };
 
@@ -53,7 +53,9 @@ function Products() {
             <td>Same great taste, with more of a kick</td>
             <td>{spice}</td>
             <td>
-              <Button variant="outline-secondary">Buy</Button>
+              <Button variant="outline-secondary" onClick={handleSpice}>
+                Buy
+              </Button>
             </td>
           </tr>
           <tr>
@@ -62,7 +64,9 @@ function Products() {
             <td>A hint of lemon zest for a tangy texture</td>
             <td>{zest}</td>
             <td>
-              <Button variant="outline-secondary">Buy</Button>
+              <Button variant="outline-secondary" onClick={handleZest}>
+                Buy
+              </Button>
             </td>
           </tr>
         </tbody>

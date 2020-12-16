@@ -1,4 +1,5 @@
 import React from "react";
+import "./NavBar.css";
 import { Navbar, Nav, Button, FormControl, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
