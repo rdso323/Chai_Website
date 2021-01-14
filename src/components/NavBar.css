@@ -19,17 +19,27 @@
   transform: rotate(360deg);
 } */
 
+.rotate {
+  display: inline-block;
+}
+
+.rotate:hover {
+  animation: rotate_logo;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1s;
+}
+
 @keyframes rotate_logo {
   0% {
-    rotate: 20deg;
+    transform: rotate(0deg);
   }
-  45% {
-    rotate: 40deg;
+  25% {
+    transform: rotate(20deg);
   }
-  55% {
-    rotate: 20deg;
+  75% {
+    transform: rotate(20deg);
   }
   100% {
-    rotate: 0deg;
+    transform: rotate(0deg);
   }
 }

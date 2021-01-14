@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Home from "./components/Home";
 import Products from "./components/Products";
+import LogIn from "./components/LogIn";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path="/Home">
           <Home />
+        </Route>
+        <Route path="/LogIn">
+          <LogIn />
         </Route>
       </Switch>
     </Router>

@@ -9,12 +9,14 @@ function NavBar() {
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand href="/Home">
-        <h1 className="Cursive">Chai {wrapper}</h1>
+        <h1 className="Cursive">
+          Chai <div className="rotate">{wrapper}</div>
+        </h1>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="/Home">Home</Nav.Link>
+          <Nav.Link href="/LogIn">Log In</Nav.Link>
           <Nav.Link href="/Products">Products</Nav.Link>
           <Nav.Link href="/About">About</Nav.Link>
           <Nav.Link disabled href="/comingSoon">

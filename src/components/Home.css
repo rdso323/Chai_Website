@@ -7,13 +7,13 @@
 }
 
 .App {
-  height: 13%;
+  height: 11%;
   /* //text-align: center; */
   /* border: 5px solid yellow; */
   position: relative;
 }
 .App-header {
-  height: 87%;
+  height: 89%;
   flex-direction: row;
   display: flex;
   position: relative;
@@ -28,6 +28,7 @@
   /* border: 5px solid blue; */
   width: 55%;
   height: 100%;
+  padding-left: 5px;
 }
 
 .right {
@@ -59,44 +60,84 @@
     opacity: 0;
   } */
 
-.right img.bottom {
-  animation-name: rightFadeInOut;
+.right img.first {
+  animation-name: First;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  animation-duration: 8s;
+  animation-duration: 16s;
   animation-direction: alternate;
 }
 
-.right img.top {
-  animation-name: rightFadeOutIn;
+.right img.second {
+  animation-name: Second;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  animation-duration: 8s;
+  animation-duration: 16s;
   animation-direction: alternate;
 }
 
-@keyframes rightFadeInOut {
+.right img.third {
+  animation-name: Third;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 16s;
+  animation-direction: alternate;
+}
+
+@keyframes First {
   0% {
     opacity: 0.7;
   }
-  45% {
+  20% {
     opacity: 0.7;
   }
-  55% {
+  30% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  80% {
     opacity: 0;
   }
   100% {
     opacity: 0;
   }
 }
-@keyframes rightFadeOutIn {
+@keyframes Second {
   0% {
     opacity: 0;
   }
-  45% {
+  20% {
     opacity: 0;
   }
-  55% {
+  30% {
+    opacity: 0.7;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes Third {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  80% {
     opacity: 0.7;
   }
   100% {
@@ -122,6 +163,7 @@
   bottom: 2%;
   left: 0%;
   font-style: italic;
+  padding-left: 5px;
 }
 
 .quote {
@@ -129,7 +171,8 @@
   text-overflow: clip;
   position: relative;
   top: 73%;
-  left: 2%;
+  padding-left: 5px;
+  color: rgb(255, 225, 225);
 }
 
 .quote-author {
@@ -137,5 +180,6 @@
   font-style: italic;
   position: relative;
   top: 76%;
-  left: 2%;
+  padding-left: 5px;
+  color: rgb(255, 225, 225);
 }
