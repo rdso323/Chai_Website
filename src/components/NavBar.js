@@ -8,7 +8,7 @@ const wrapper = <FontAwesomeIcon icon={faCoffee} size="sm" />;
 function NavBar() {
   return (
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="/Home">
+      <Navbar.Brand href="/Home" style={{marginLeft:10}}>
         <h1 className="Cursive">
           Chai <div className="rotate">{wrapper}</div>
         </h1>
@@ -23,13 +23,13 @@ function NavBar() {
             Coming Soon
           </Nav.Link>
         </Nav>
-        <Form inline>
+        <Form inline style={{marginRight:10}}>
           <FormControl
             type="text"
             placeholder="Search..."
             className="mr-sm-2"
           />
-          <Button variant="outline-success">Search</Button>
+          <Button variant="outline-success" >Search <div className="=Margin"/> </Button>
         </Form>
       </Navbar.Collapse>
     </Navbar>

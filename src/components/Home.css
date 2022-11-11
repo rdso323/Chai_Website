@@ -7,13 +7,13 @@
 }
 
 .App {
-  height: 11%;
+  height: 8.5%;
   /* //text-align: center; */
   /* border: 5px solid yellow; */
   position: relative;
 }
 .App-header {
-  height: 89%;
+  height: 91.5%;
   flex-direction: row;
   display: flex;
   position: relative;
@@ -28,7 +28,8 @@
   /* border: 5px solid blue; */
   width: 55%;
   height: 100%;
-  padding-left: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .right {
@@ -171,7 +172,7 @@
   text-overflow: clip;
   position: relative;
   top: 73%;
-  padding-left: 5px;
+  padding-left: 10px;
   color: rgb(255, 225, 225);
 }
 
@@ -180,6 +181,6 @@
   font-style: italic;
   position: relative;
   top: 76%;
-  padding-left: 5px;
+  padding-left: 10px;
   color: rgb(255, 225, 225);
 }
