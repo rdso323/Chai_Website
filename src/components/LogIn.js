@@ -7,6 +7,16 @@ import { useState } from "react";
 import "./Login.css";
 import { faRemoveFormat } from "@fortawesome/free-solid-svg-icons";
 import { Link, useHistory } from "react-router-dom";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+
 
 function LogIn() {
   store.dispatch({ type: "ADD" });
@@ -16,15 +26,41 @@ function LogIn() {
   const [message, setMessage] = useState("");
   const history = useHistory()
   
+  const firebaseConfig = {
+    apiKey: "AIzaSyC1XgGS9aw1sio4FTeuXyeaEuwbXrSZ4bY",
+    authDomain: "chai-website-rohan.firebaseapp.com",
+    projectId: "chai-website-rohan",
+    storageBucket: "chai-website-rohan.appspot.com",
+    messagingSenderId: "1099002210953",
+    appId: "1:1099002210953:web:e6745350dbb635b08d7458",
+    measurementId: "G-4FC54PCXWZ"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (password != "password"){
-      setMessage("Incorrect Password")
-    }
-    else{ 
-      history.push('/Home')
-    }
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        // ...
+        history.push('/Home')
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setMessage("Incorrect Password")
+      });
+
+    // if (password != "password"){
+    //   setMessage("Incorrect Password")
+    // }
+    // else{ 
+    //   history.push('/Home')
+    // }
   }
 
   const validateForm = () => {
