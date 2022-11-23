@@ -1,0 +1,13 @@
+{
+    "products": {
+        "og": {
+        "value": 20
+        },
+        "spice": {
+        "value": 20
+        },
+        "zest": {
+        "value": 20
+        }
+    }
+}

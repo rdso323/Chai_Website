@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Table, Button } from "react-bootstrap";
 import NavBar from "./NavBar";
+import { getDatabase, onValue, ref, set, update} from "firebase/database"
 
 function Products() {
   const Headers = [
@@ -11,16 +12,52 @@ function Products() {
     "Quantity Left",
     "Purchase",
   ];
-  const [og, setOg] = useState(20);
-  const [spice, setSpice] = useState(10);
-  const [zest, setZest] = useState(8);
+
+  const db = getDatabase(undefined,'https://chai-website-rohan-default-rtdb.asia-southeast1.firebasedatabase.app/');
+
+  useEffect(() => {
+    set(ref(db, 'users'), {
+      username: 'Rohan',
+      email: 'yo@gmail.com'
+    });
+    console.log("Testingggggggg")
+    const query = ref(db, "products");
+    console.log(query)
+    onValue(query, (snapshot) => {
+      console.log("Data is..." )
+      const data = snapshot.val();
+      console.log("Data is..." )
+      console.log(data)
+
+      if (snapshot.exists()) {
+        // Object.values(data).map((spice) => {
+        //   // setSpice((spices) => [...spices, spice]);
+        //   console.log(spice)
+        // });
+        setOg(data['og'])
+        setSpice(data['spice'])
+        setZest(data['zest'])
+        console.log(data['og'])
+      }
+    });
+  }, []);
+
+
+
+  const [og, setOg] = useState();
+  const [spice, setSpice] = useState();
+  const [zest, setZest] = useState();
   const [status, setstatus] = useState("");
   let statusColour
 
   const handleOg = () => {
     if (og !== 0) {
-      setOg(og - 1);
+      // setOg(og - 1);
       setstatus("Purchased Successfully!");
+      update(ref(db, 'products'), {
+        og: og-1,
+      });
+
     } else {
       setstatus("Out Of Stock!");
     }
@@ -28,8 +65,11 @@ function Products() {
 
   const handleSpice = () => {
     if (spice !== 0) {
-      setSpice(spice - 1);
+      // setSpice(spice - 1);
       setstatus("Purchased Successfully!");
+      update(ref(db, 'products'), {
+        spice: spice-1,
+      });
     } else {
       setstatus("Out Of Stock!");
     }
@@ -37,8 +77,11 @@ function Products() {
 
   const handleZest = () => {
     if (zest !== 0) {
-      setZest(zest - 1);
+      // setZest(zest - 1);
       setstatus("Purchased Successfully!");
+      update(ref(db, 'products'), {
+        zest: zest-1,
+      });
     } else {
       setstatus("Out Of Stock!");
     }

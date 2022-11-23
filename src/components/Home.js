@@ -4,12 +4,13 @@ import chaiPic from "../images/masala-chai-1.jpg";
 import chaiPic2 from "../images/masala-chai-2.jpg";
 import chaiPic3 from "../images/Quentin_chai_1.jpeg";
 import NavBar from "./NavBar";
+import app from "./Firebaseconfig"
 
 function Home() {
   return (
     <div className="Main">
       <div className="App">
-        <NavBar />
+        <NavBar /> <app />
       </div>
       <div className="App-header">
         <div className="left">
