@@ -8,22 +8,33 @@ import {
 import Home from "./components/Home";
 import Products from "./components/Products";
 import LogIn from "./components/LogIn";
+import NavBar from "./components/NavBar";
+import FirebaseConfig from "./components/FirebaseConfig"
+import { useEffect, useState } from "react";
 
 function App() {
+  const app = FirebaseConfig();
+  const [user, setUser] = useState("");
+
+  useEffect(() => {
+    console.log("Hello in useEffect");
+  }, []);
+
   return (
     <Router>
+      <NavBar user={user}/>
       <Switch>
         <Route exact path="/">
           <Redirect to="/Home" />
         </Route>
         <Route path="/Products">
-          <Products />
+          <Products/>
         </Route>
         <Route path="/Home">
-          <Home />
+          <Home/>
         </Route>
         <Route path="/LogIn">
-          <LogIn />
+          <LogIn user={user} setUser={setUser} />
         </Route>
       </Switch>
     </Router>

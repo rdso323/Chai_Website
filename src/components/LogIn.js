@@ -8,10 +8,14 @@ import "./Login.css";
 import { faRemoveFormat } from "@fortawesome/free-solid-svg-icons";
 import { Link, useHistory } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { propTypes } from "react-bootstrap/esm/Image";
 
 
-function LogIn() {
+function LogIn(props) {
   store.dispatch({ type: "ADD" });
+
+  // localStorage.setItem('user', 'Guest')
+  // props.setUser(localStorage.getItem('user'))
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,6 +30,11 @@ function LogIn() {
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
+        localStorage.setItem('user','Rohan')
+        props.setUser('Rohan')
+        //console.log(localStorage.getItem('user'))
+        //props.user = "Rohan"
+        console.log(props.user)
         // ...
         history.push('/Home')
       })
@@ -50,7 +59,7 @@ function LogIn() {
 
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       {/* <div className="background" style={{backgroundImage:`url(${chaiBackground})`}}> */}
         {/* <img className="backgroundImage" src={chaiBackground} alt="pic" /> */}
         <div className="Login" style={{backgroundImage:`url(${chaiBackground})`,backgroundRepeat: 'no-repeat',backgroundPosition: 'center',backgroundSize: 'cover',

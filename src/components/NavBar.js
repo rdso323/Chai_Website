@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 const wrapper = <FontAwesomeIcon icon={faCoffee} size="sm" />;
 
-function NavBar() {
+function NavBar(props) {
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand href="/Home" style={{marginLeft:10}}>
@@ -24,6 +24,7 @@ function NavBar() {
           </Nav.Link>
         </Nav>
         <Form inline style={{marginRight:10}}>
+          <p1 inline style={{marginRight:10}}>@{props.user}</p1>
           <FormControl
             type="text"
             placeholder="Search..."

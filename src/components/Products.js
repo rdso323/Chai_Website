@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Table, Button } from "react-bootstrap";
-import NavBar from "./NavBar";
 import { getDatabase, onValue, ref, set, update} from "firebase/database"
 
 function Products() {
@@ -96,7 +95,7 @@ function Products() {
 
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <Table striped bordered hover>
         <thead>
           <tr>
