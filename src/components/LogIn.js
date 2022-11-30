@@ -30,7 +30,7 @@ function LogIn(props) {
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        localStorage.setItem('user','Rohan')
+        localStorage.setItem('user',email.substring(0,email.indexOf("@")))
         props.setUser('Rohan')
         //console.log(localStorage.getItem('user'))
         //props.user = "Rohan"

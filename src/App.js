@@ -14,11 +14,15 @@ import { useEffect, useState } from "react";
 
 function App() {
   const app = FirebaseConfig();
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState("Guest");
 
   useEffect(() => {
     console.log("Hello in useEffect");
   }, []);
+
+  if(localStorage.getItem('user') === null){
+    localStorage.setItem('user','Guest')
+  }
 
   return (
     <Router>

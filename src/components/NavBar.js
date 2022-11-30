@@ -24,7 +24,7 @@ function NavBar(props) {
           </Nav.Link>
         </Nav>
         <Form inline style={{marginRight:10}}>
-          <p1 inline style={{marginRight:10}}>@{props.user}</p1>
+          <p1 inline style={{marginRight:10}}>@{localStorage.getItem('user')}</p1>
           <FormControl
             type="text"
             placeholder="Search..."
