@@ -10,11 +10,10 @@ import Products from "./components/Products";
 import LogIn from "./components/LogIn";
 import NavBar from "./components/NavBar";
 import FirebaseConfig from "./components/FirebaseConfig"
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 function App() {
   const app = FirebaseConfig();
-  const [user, setUser] = useState("Guest");
 
   useEffect(() => {
     console.log("Hello in useEffect");
@@ -26,7 +25,7 @@ function App() {
 
   return (
     <Router>
-      <NavBar user={user}/>
+      <NavBar/>
       <Switch>
         <Route exact path="/">
           <Redirect to="/Home" />
@@ -38,7 +37,7 @@ function App() {
           <Home/>
         </Route>
         <Route path="/LogIn">
-          <LogIn user={user} setUser={setUser} />
+          <LogIn/>
         </Route>
       </Switch>
     </Router>

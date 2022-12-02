@@ -15,10 +15,6 @@ function Products() {
   const db = getDatabase(undefined,'https://chai-website-rohan-default-rtdb.asia-southeast1.firebasedatabase.app/');
 
   useEffect(() => {
-    set(ref(db, 'users'), {
-      username: 'Rohan',
-      email: 'yo@gmail.com'
-    });
     console.log("Testingggggggg")
     const query = ref(db, "products");
     console.log(query)
@@ -50,21 +46,23 @@ function Products() {
   let statusColour
 
   const handleOg = () => {
-    if (og !== 0) {
-      // setOg(og - 1);
+    if(localStorage.getItem('user') === 'Guest'){
+      setstatus("You Must Be Logged In To Purchase")
+    } else if (og !== 0) {
       setstatus("Purchased Successfully!");
       update(ref(db, 'products'), {
         og: og-1,
       });
-
-    } else {
+    } 
+    else {
       setstatus("Out Of Stock!");
     }
   };
 
   const handleSpice = () => {
-    if (spice !== 0) {
-      // setSpice(spice - 1);
+    if(localStorage.getItem('user') === 'Guest'){
+      setstatus("You Must Be Logged In To Purchase")
+    } else if (spice !== 0) {
       setstatus("Purchased Successfully!");
       update(ref(db, 'products'), {
         spice: spice-1,
@@ -75,8 +73,9 @@ function Products() {
   };
 
   const handleZest = () => {
-    if (zest !== 0) {
-      // setZest(zest - 1);
+    if(localStorage.getItem('user') === 'Guest'){
+      setstatus("You Must Be Logged In To Purchase")
+    } else if (zest !== 0) {
       setstatus("Purchased Successfully!");
       update(ref(db, 'products'), {
         zest: zest-1,
@@ -86,7 +85,7 @@ function Products() {
     }
   };
 
-  if (status == "Out Of Stock!"){
+  if (status != "Purchased Successfully!"){
     statusColour = <p style={{ color: "red" }}>{status}</p>
   }
   else{
